@@ -7,7 +7,7 @@
 
 dht DHT;
 #define DHT11_PIN 5
-char number[]="+50494505578";
+char number[]="+mynumber";
 boolean started=false;
 SoftwareSerial sim900(9,10);
 
@@ -105,7 +105,7 @@ void sendData(){
   sim900.print("AT+CMGF=1\r"); //text mode
   delay(1000);
   
-  sim900.print("AT+CMGS=\"+50494505578\"\r");
+  sim900.print("AT+CMGS=\"+mynumber\"\r");
   delay(1000);
   
   sim900.print(finalString + "\r"); //The text for the message
